@@ -1,6 +1,6 @@
 {
   "name": "magnet-bull",
-  "version": "0.1.2",
+  "version": "1.0.0",
   "description": "Magnet adapter for bull",
   "keywords": [
     "magnet",
@@ -26,7 +26,7 @@
   },
   "dependencies": {
     "bull": "^3.0.0-rc.3",
-    "magnet-core": "^3.9.0"
+    "magnet-core": "^4.0.1"
   },
   "devDependencies": {
     "fly": "^2.0.6",
