@@ -2,8 +2,10 @@ import { Module } from 'magnet-core/module'
 import * as Queue from 'bull'
 
 export default class MagnetBull extends Module {
-  get moduleName () { return 'bull' }
-  get defaultConfig () { return __dirname }
+  init () {
+    this.moduleName = 'bull'
+    this.defaultConfig = __dirname
+  }
 
   factory (name = 'main', config) {
     let queue
