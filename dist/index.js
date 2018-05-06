@@ -11,16 +11,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const module_1 = require("magnet-core/module");
 const Queue = require("bull");
 class MagnetBull extends module_1.Module {
-    get moduleName() { return 'bull'; }
-    get defaultConfig() { return __dirname; }
+    init() {
+        this.moduleName = 'bull';
+        this.defaultConfig = __dirname;
+    }
     factory(name = 'main', config) {
-        let queue;
-        if (config.magnet) {
-            queue = Queue(name, this.app[config.magnet]);
-        }
-        else {
-            queue = Queue(name, config.host, config.port);
-        }
+        const queue = Queue(name, config);
         // queue
         // .on('ready', () => {
         //   this.log.info('bull: ready')
