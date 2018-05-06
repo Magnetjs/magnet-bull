@@ -8,12 +8,7 @@ export default class MagnetBull extends Module {
   }
 
   factory (name = 'main', config) {
-    let queue
-    if (config.magnet) {
-      queue = Queue(name, this.app[config.magnet])
-    } else {
-      queue = Queue(name, config.host, config.port)
-    }
+    const queue = Queue(name, config)
 
     // queue
     // .on('ready', () => {
